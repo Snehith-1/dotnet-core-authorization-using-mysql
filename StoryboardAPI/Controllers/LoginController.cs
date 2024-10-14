@@ -32,6 +32,8 @@ namespace StoryboardAPI.Controllers
             var ObjToken = objvalidateuser.Token(values.user_code, objcmnfunctions.ConvertToAscii(values.user_password), values.company_code.ToLower());
             if (ObjToken != null)
             {
+               // Clear the Authorization header
+                HttpContext.Request.Headers["Authorization"] = string.Empty;
                 tokenvalue = "Bearer " + ObjToken;
                 msSQL = "call adm_mst_spstoretoken('" + tokenvalue + "','" + values.user_code + "','" + objcmnfunctions.ConvertToAscii(values.user_password) + "','" + values.company_code + "')";
                 objMySqlDataReader = objdbconn.GetDataReader(msSQL);
