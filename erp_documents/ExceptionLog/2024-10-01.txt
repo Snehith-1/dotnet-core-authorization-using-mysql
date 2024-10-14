@@ -1,0 +1,1 @@
+*******Date*****2024 - 10 - 01 21: 12:11***********ERROR [42S02] [MySQL][ODBC 5.3(w) Driver][mysqld-5.7.30-log]Table 'vcxlive.adm_mst_tuser' doesn't exist*****Query**** SELECT user_gid FROM vcxlive.adm_mst_tuser  WHERE user_code='boba000' AND user_password='114'*******Apiref********
